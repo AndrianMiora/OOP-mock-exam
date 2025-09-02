@@ -2,25 +2,14 @@ package RestaurantManagement;
 
 import java.time.Instant;
 
-public class CommandeEnLigne {
-    private final int id;
-    private final Instant dateDeCreation;
-    private final MoyenDePaiement moyenDePaiement;
+public class CommandeEnLigne extends Commande {
+   private final MoyenDePaiement moyenDePaiement;
     private final String adresseDeLivraison;
 
     public CommandeEnLigne(int id, Instant dateDeCreation, MoyenDePaiement moyenDePaiement, String adresseDeLivraison) {
-        this.id = id;
-        this.dateDeCreation = dateDeCreation;
+        super(id, dateDeCreation);
         this.moyenDePaiement = moyenDePaiement;
         this.adresseDeLivraison = adresseDeLivraison;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Instant getDateDeCreation() {
-        return dateDeCreation;
     }
 
     public MoyenDePaiement getMoyenDePaiement() {
